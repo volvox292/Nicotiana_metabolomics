@@ -1,0 +1,60 @@
+---
+title: "ASR-single"
+output: html_document
+---
+```{r}
+MBASR.directory="/Users/delser/MBASR" 
+setwd(MBASR.directory)
+# Load this source file
+source("MBASR.load.functions.R")
+# Set these file names
+file.name.tree="all_metabo_rooted.nwk"
+file.name.trait.data="trait.data.2.txt"
+file.name.plot.settings="plot.settings.2.txt"
+# Set these analysis parameters
+character.type="ordered"
+n.samples=500
+# Run the analysis
+MBASR(file.name.tree, file.name.trait.data, file.name.plot.settings, character.type, n.samples)
+```
+```
+
+
+```{r}
+
+```
+
+
+```{r}
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

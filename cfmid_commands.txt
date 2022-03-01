@@ -1,0 +1,1 @@
+for i in {1..1103}; do echo "singularity exec cfmid_latest.sif cfm-predict ../COMPOUNDS_DB_PART_${i}.txt 0.001 /trained_models_cfmid4.0/[M+H]+/param_output.log /trained_models_cfmid4.0/[M+H]+/param_config.txt 0 COMPOUNDS_DB_PART_${i}.mgf"; done > all_commands.txt
