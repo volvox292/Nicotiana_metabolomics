@@ -1,3 +1,7 @@
+
+![Workflow-total_v2](https://user-images.githubusercontent.com/63146629/156192031-4d1f1804-a5c8-4aec-bf8c-e46b80b93d76.svg)
+
+
 # Nicotiana_metabolomics
 
 * **S1_openbabel_conversion.ipynb**	Converts Smiles to Inchi
