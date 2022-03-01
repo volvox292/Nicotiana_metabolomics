@@ -1,6 +1,7 @@
 
 
-![Workflow-total_v2](https://user-images.githubusercontent.com/63146629/156192422-f9f7ddde-7b18-49fd-8729-f565e6337f9c.png)
+![Workflow-total_v2](https://user-images.githubusercontent.com/63146629/156193599-c3b45c1d-5397-4c7c-b364-b40ffa4f1d59.png)
+
 
 
 # Nicotiana_metabolomics
