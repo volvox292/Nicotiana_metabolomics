@@ -14,8 +14,8 @@
 * **S5_Process_mgf.ipynb**	Used to create composite Spectra from CFM Collision Energies
 * **S6_matchms_spec2vec.py**	Used for Database Matching of CFM ID on HPC Cluster
 * **S7_matchms_scores_analysis.py**	Used for Database Matching of CFM ID on HPC Cluster
-* **S8_MatchMS-v1-cousine-msp.ipynb**	Used for Database Matching of Nicotiana DB
-* **S9_MatchMS-v1-cousine.ipynb**	Used for Database Matching of Jassbi
+* **S8_MatchMS-v1-cosine-msp.ipynb**	Used for Database Matching of Nicotiana DB
+* **S9_MatchMS-v1-cosine.ipynb**	Used for Database Matching of Jassbi
 * **S10_Batch-QTOF-sens-v3.xml**	Used for Batch Mode processing of Dataset
 * **S11_mgf-rem-redundancy-v4.ipynb**	Remove redundant features
 * **S12_Sirius-removev2.ipynb**	Remove redundant IDs from Sirius mgf file
@@ -34,3 +34,4 @@
 * **S25_ASR-single.Rmd**	Ancestral State reconstruction based on MBASR
 * **S26_dbsearch.py**	Script to run cosine score based search on big in-silico db
 * **S27_run_db.py**	Script to run cosine score based search on big in-silico db
+* **S28_group_for_treemap.ipynb** Used to group and sum canopus classes peak areas
