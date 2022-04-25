@@ -1,7 +1,7 @@
 
 
 
-![Workflow-total_v2](https://user-images.githubusercontent.com/63146629/165043575-9761a943-258f-4fee-ba67-39cf63451bf2.png)
+![Workflow-total_v2](https://user-images.githubusercontent.com/63146629/165044038-53569283-8e15-4345-99c7-d7090511faaa.svg)
 
 
 
