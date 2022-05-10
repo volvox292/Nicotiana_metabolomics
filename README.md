@@ -37,3 +37,6 @@
 * **S26_dbsearch.py**	Script to run cosine score based search on big in-silico db
 * **S27_run_db.py**	Script to run cosine score based search on big in-silico db
 * **S28_group_for_treemap.ipynb** Used to group and sum canopus classes peak areas
+* **S29_alpha_diversity.ipynb** Calculate alpha diversity based on shannon entropy
+* **S30_Vegan_calculations.Rmd** NMDS using vegan package
+* **S31_cosine_distance_sp_canopus.ipynb** Calculate distances between species and CANOPUS classes
