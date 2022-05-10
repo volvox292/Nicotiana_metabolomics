@@ -1,0 +1,103 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+mydat <- read.csv("C:/Users/delser/Desktop/matrix_in.txt", sep="\t", header =TRUE, row.names = 1)
+head(mydat)
+```
+
+```{r}
+transp <- t(mydat)
+head(transp)
+```
+```{r}
+community_matrix=matrix(transp)
+head(community_matrix)
+```
+```{r}
+library("vegan")
+example_NMDS=metaMDS(transp, # Our community-by-species matrix
+                     k=2)
+```
+
+```{r}
+plot(example_NMDS)
+
+```
+
+
+```{r}
+ordiplot(example_NMDS,type="n") #Ordination plot function especially for congested plots
+orditorp(example_NMDS,display="species",col="red",air=0.5) #The function adds text or points to ordination plots
+orditorp(example_NMDS,display="sites",cex=1.25,air=0.5)
+
+```
+
+
+
+
+```{r}
+library(tidyverse)
+plot_df <- scores(example_NMDS, display = "sites") %>% 
+  as.data.frame() %>% 
+  rownames_to_column("site")
+```
+
+```{r}
+library(data.table)
+head(plot_df)
+fwrite(plot_df, "NMDS.tsv", sep = "\t", quote = FALSE)
+
+```
+
+
+```{r}
+plot_df_sp <- scores(example_NMDS, display = "species") %>% 
+  as.data.frame() %>% 
+  rownames_to_column("species")
+
+head(plot_df_sp)
+
+```
+
+```{r}
+example_NMDS.fit <- envfit(example_NMDS, transp, permutations = 999)
+head(example_NMDS.fit)
+```
+
+```{r}
+df_instrisic <- example_NMDS.fit$vectors$arrows %>% 
+  as.data.frame()
+  y<- example_NMDS.fit$vectors$pvals %>% 
+  as.data.frame()
+x <-merge(df_instrisic,y, by.x = 0, by.y = 0)
+head(x)
+fwrite(x, "groups.tsv", sep = "\t", quote = FALSE)
+```
+
+```{r}
+head(example_NMDS.fit$vectors)
+```
+
+
+```{r}
+# SVG graphics device
+svg("my_plot_05.svg")
+ordiplot(example_NMDS, type = "n", main = "intrinsic species")
+orditorp(example_NMDS, display = "sites", cex = 0.5)
+plot(example_NMDS.fit, p.max = 0.5, col = "black", cex = 0.05) # change the significance level of species shown with p.max
+dev.off() 
+```
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
