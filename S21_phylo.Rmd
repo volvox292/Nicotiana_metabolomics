@@ -14,7 +14,7 @@ library(ape)
 
 
 ```{r}
-x=read.csv("/Users/delser/Git/phd/motif_pairwise.tsv",sep="\t")
+x=read.csv("/Users/delser/Git/phd/ntw_pairwise.tsv",sep="\t")
 row.names(x) <- x$X
 head(x)
 z=x[-1]
@@ -32,18 +32,45 @@ y=data.matrix(z)
 head.matrix(y)
 
 ```
+
 ```{r}
 #y <- 1-y
 y2 <- as.dist(y)
 #my_nj=fastme.bal(y2)
 my_nj <- ape::nj(y2)
-plot(my_nj, "unrooted")
+fun<- function(xx) nj(as.dist(xx))
+
+
+## get 100 bootstrap trees:
+bstrees <- boot.phylo(my_nj, y,fun , B = 999,  mc.cores = 3,trees=TRUE)$trees
+## get proportions of each clade:
+clad <- prop.clades(my_nj, bstrees, rooted = TRUE)
+## get proportions of each bipartition:
+boot <- prop.clades(my_nj, bstrees)
+
+# SVG graphics device
+svg("bootstrap_plot.svg")
+
+
+
+layout(1)
+par(mar = rep(2, 4))
+plot(my_nj, main = "Bipartition vs. Clade Support Values")
+drawSupportOnEdges(boot)
+nodelabels(clad)
+legend("bottomleft", legend = c("Bipartitions", "Clades"), pch = 22,
+       pt.bg = c("green", "lightblue"), pt.cex = 2.5)
+
+# Close the graphics device
+dev.off() 
 ```
 ```{r}
 plot(my_nj, "phylogram")
 ```
+
+
 ```{r}
-write.tree(my_nj, file = "motif.nhx", append = FALSE,digits = 10, tree.names = FALSE)
+write.tree(my_nj, file = "ntw.nhx", append = FALSE,digits = 10, tree.names = FALSE)
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
