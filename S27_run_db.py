@@ -1,3 +1,6 @@
+#uses 22 cores and the in-silico library split into 22 parts use sample.mgf as input argument
+# will run dbsearch.py as subprocess
+
 import os                                                                       
 from multiprocessing import Pool   
 import pandas as pd
