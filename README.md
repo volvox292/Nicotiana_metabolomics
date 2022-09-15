@@ -1,4 +1,4 @@
-# Evolutionary metabolomics of specialized metabolism diversification in the genus Nicotiana highlights allopolyploidy-mediated innovations in N-acylnornicotine metabolism
+# Evolutionary metabolomics of specialized metabolism diversification in the genus *Nicotiana* highlights allopolyploidy-mediated innovations in N-acylnornicotine metabolism
 
 preprint available at: https://doi.org/10.1101/2022.09.12.507566
 
@@ -6,7 +6,7 @@ preprint available at: https://doi.org/10.1101/2022.09.12.507566
 
 
 
-# Workflow:
+## Workflow:
 
 
 
@@ -19,7 +19,7 @@ preprint available at: https://doi.org/10.1101/2022.09.12.507566
 
 
 
-# Scripts used in this publication:
+## Scripts used in this publication:
 
 * **S1_openbabel_conversion.ipynb**	Converts Smiles to Inchi
 * **S2_reformater.R**	Clean Databases
