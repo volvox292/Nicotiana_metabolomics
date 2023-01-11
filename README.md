@@ -2,8 +2,16 @@
 
 preprint available at: https://doi.org/10.1101/2022.09.12.507566
 
+supplementatry data at : [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6536010.svg)](https://doi.org/10.5281/zenodo.6536010)
 
+```bash {bash, echo=T, eval=F}
+# Running QCxmS on the singularity container (ubuntu.sif) with the qcxms.py script 
+# —> singularity exec ubuntu.sif python qcxms.py -o $outdir -nt $nr_trajectories -i $inchi  
 
+# Sending it 
+module load singularity
+srun -p public singularity exec ubuntu.sif python qcxms.py -o mol1 -nt 5 -i "InChI=1S/C23H38N2O3/c1-2-3-5-11-20(26)12-6-4-7-13-21(27)17-23(28)25-16-9-14-22(25)19-10-8-15-24-18-19/h8,10,15,18,20-22,26-27H,2-7,9,11-14,16-17H2,1H3"
+```
 
 
 ## Workflow:
