@@ -2,7 +2,7 @@
 
 preprint available at: https://doi.org/10.1101/2022.09.12.507566
 
-supplementatry data at : [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6536010.svg)](https://doi.org/10.5281/zenodo.6536010)
+supplementatry data at : [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8114749.svg)](https://doi.org/10.5281/zenodo.8114749) 
 
 ```bash {bash, echo=T, eval=F}
 # Running QCxmS on the singularity container (ubuntu.sif) with the qcxms.py script 
